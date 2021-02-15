@@ -135,20 +135,16 @@ Now imagine you work for an investor and want to see which industries generate t
 
 # get full data, then the revenue per employee (rev_emp)
 q3 <- inc[complete.cases(inc),] %>%
-  group_by(Industry) %>%
-  summarise(Emp = sum(Employees), Rev = sum(Revenue)) %>%
-  mutate(rev_emp = Rev/Emp) %>%
-  arrange(desc(rev_emp))
-q3
+  mutate(rev_emp = Revenue/Employees)
 
-ggplot(q3, aes(x=reorder(Industry, rev_emp), y=rev_emp)) +
-  scale_y_continuous(limits=c(0,1250000)) +
-  geom_bar(stat="identity", width=0.7, fill = "royalblue") +
-  geom_text(aes(label=round(rev_emp,2)), size=3, hjust=-0.01) +
-  labs(title = "Revenue per Employee in each Industry", x="Industry", y="Revenue per Employee (dollar)") +
-  theme(axis.text.y = element_text(size = 10)) +
+ggplot(q3, aes(reorder(Industry, rev_emp), y=rev_emp)) +
+  scale_y_continuous(limits=c(0,1200000)) +
+  geom_boxplot(fill="lightblue") +
+  stat_summary(fun.y=mean, geom="point", shape=20, size=2, color="red", fill="red") +
+  labs(title="Revenue per Employee in each Industry", x="Industry", y="Revenue per Employee (dollar)") +
+  theme(axis.text.y = element_text(size = 9)) +
   coord_flip()
-
 ```
+
 
 
