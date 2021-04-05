@@ -1,0 +1,91 @@
+---
+title: "Data 608 Project Proposal"
+author: "Sin Ying Wong"
+date: "04/04/2021"
+output:
+  rmdformats::readthedown:
+    code_folding: show
+    df_print: paged
+    highlight: tango
+    number_sections: yes
+    smooth_scroll: yes
+    theme: united
+    toc_collapsed: yes
+    toc_depth: 5
+    toc_float: yes
+  html_notebook: default
+  html_document:
+    df_print: paged
+    toc: yes
+    toc_collapsed: yes
+    toc_float: yes
+  pdf_document:
+    extra_dependencies:
+    - geometry
+    - multicol
+    - multirow
+  word_document:
+    toc: yes
+    toc_depth: '5'
+theme: lumen
+number_sections: yes
+toc_depth: 3
+---
+
+# Project Proposal
+
+## Objective
+
+Covid-19 has been widely affect USA and also the whole world in the past year. In March 2020, World Health Organization (WHO) declared it a pandemic around the world in over 110 countries. It is caused by severe respiratory syndrome Coronavirus 2. Its data mostly categorized by confirmed cases, recovered cases, and number of deaths.  I will create a visualization dashboard to show the statistics on Coronavirus disease 2019 ("Covid-19") for USA and worldwide.
+
+
+## Data
+
+The Coronavirus disease 2019 (Covid-19) dataset is in CSV format and is sourced from a upstream repository maintained by the Johns Hopkinds University Center for Systems Science and Engineering (CSSE) on Github which comes from a variety of public sources. The data can be found via this [link](https://github.com/datasets/covid-19).
+
+Aggregated data sources:
+
+- [World Health Organization (WHO)](https://www.who.int/)
+
+- [European Centre for Disease Prevention and Control (ECDC)](https://www.ecdc.europa.eu/en/geographical-distribution-2019-ncov-cases)
+
+- [DXY.cn. Pneumonia. 2020.](http://3g.dxy.cn/newh5/view/pneumonia)
+
+- [US CDC](https://www.cdc.gov/coronavirus/2019-ncov/index.html)
+
+- [BNO News](https://bnonews.com/index.php/2020/02/the-latest-coronavirus-cases/)
+
+- [WorldoMeters](https://www.worldometers.info/coronavirus/)
+
+- [1Point3Arces](https://coronavirus.1point3acres.com/en)
+
+- [COVID Tracking Project](https://covidtracking.com/data) (US Testing and Hospitalization Data. We use the maximum reported value from "Currently" and "Cumulative" Hospitalized for our hospitalization number reported for each state.)
+
+
+## Project Plan
+
+I will create a visualization dashboard to show the statistics on Coronavirus disease 2019 ("Covid-19") for USA and worldwide.
+
+USA
+
+- Number of cases by gender and age by state over time
+
+  - Confirmed
+
+  - Recovered
+
+  - Deaths
+
+Worldwide
+
+- Number of cases by country over time
+
+  - Confirmed
+
+  - Recovered
+
+  - Deaths
+  
+I am planning to use R and Shiny web app to produce this dashboard. Table, plot, chart and map may be used in the dashboard.
+
+R libraries may be used: `plotly`, `tidyverse`, `maptools`, `shiny`.
